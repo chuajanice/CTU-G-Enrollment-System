@@ -1,0 +1,210 @@
+/*M!999999\- enable the sandbox mode */ 
+-- MariaDB dump 10.19  Distrib 10.5.29-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: sphinx0945_studentlist
+-- ------------------------------------------------------
+-- Server version	10.5.29-MariaDB-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `list`
+--
+
+DROP TABLE IF EXISTS `list`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `list` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `first_name` varchar(100) DEFAULT NULL,
+  `middle_name` varchar(100) DEFAULT NULL,
+  `last_name` varchar(100) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `birth_date` date DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `contactno` varchar(50) DEFAULT 'NULL',
+  `gender` varchar(20) DEFAULT 'NULL',
+  `program` varchar(100) DEFAULT NULL,
+  `year` varchar(20) DEFAULT NULL,
+  `academicstatus` varchar(20) DEFAULT 'NULL',
+  `studentstatus` varchar(20) DEFAULT 'NULL',
+  `semester` int(11) DEFAULT NULL,
+  `workflow_status` varchar(20) DEFAULT 'In Progress',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `list`
+--
+
+LOCK TABLES `list` WRITE;
+/*!40000 ALTER TABLE `list` DISABLE KEYS */;
+INSERT INTO `list` VALUES (78,'2025-12-11 02:46:18','Janice','Angel L.','Chua','San Rafael, Itbayat, Batanes','2025-12-04','adsa@gmail.com','09123456789','Prefer not to say','DMT','3rd','Irregular','Continuee',1,'In Progress'),(79,'2025-12-11 02:47:29','Janice','Angel L.','Chua','San Rafael, Itbayat, Batanes','2025-12-04','adsa@gmail.com','09123456789','Prefer not to say','DMT','3rd','Irregular','Continuee',1,'In Progress'),(80,'2025-12-11 02:48:04','Janice','Angel L.','Chua','Malubibit Norte, Flora, Apayao','2025-12-11','adsa@gmail.com','09222222222','Prefer not to say','BTLED-ICT','3rd','Irregular','New',2,'In Progress'),(81,'2025-12-11 05:13:00','Janice','Angel L.','Chua','Luyon, Luna, Apayao','2006-02-15','janice123quinanola@gmail.com','09608999012','Prefer not to say','BSIT','2nd','Regular','New',1,'In Progress');
+/*!40000 ALTER TABLE `list` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `login` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES (1,'CtuAdmin','$2y$10$s0YyK3tX4FwsdHB6Iz6hZOxYZKMmtSvKdSh6gxSz2J1ASgyXnblri'),(2,'admin1','$2y$10$.GRUAnxiIPoKilHYPm/ToOO6VI5E8hbkLTzQjoKmlSOTbmbIiq/vO'),(3,'admin2','$2y$10$AE99P1o9UPgyediAN.9r/e.bXEIIaD4mIKTX3nIVJbJgII79X1pXW');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login_logs`
+--
+
+DROP TABLE IF EXISTS `login_logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `login_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `device_info` text NOT NULL,
+  `ip_address` varchar(50) NOT NULL,
+  `login_time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login_logs`
+--
+
+LOCK TABLES `login_logs` WRITE;
+/*!40000 ALTER TABLE `login_logs` DISABLE KEYS */;
+INSERT INTO `login_logs` VALUES (1,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 12:58:42'),(2,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 12:58:43'),(3,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:18:06'),(4,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:18:07'),(5,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36','158.62.53.34','2025-12-10 13:39:11'),(6,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:39:34'),(7,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:39:35'),(8,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:48:35'),(9,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:48:36'),(10,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:52:03'),(11,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:52:20'),(12,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:52:21'),(13,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:55:25'),(14,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:55:47'),(15,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:56:58'),(16,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 13:57:48'),(17,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36','175.176.71.9','2025-12-10 15:01:17'),(18,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36','175.176.71.9','2025-12-10 15:01:19'),(19,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','175.176.71.9','2025-12-10 15:16:34'),(20,'admin1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36','158.62.53.34','2025-12-10 15:24:45'),(21,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36','175.176.71.9','2025-12-10 15:24:55'),(22,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36','175.176.71.9','2025-12-10 16:01:07'),(23,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36','175.176.71.9','2025-12-10 16:12:38'),(24,'CtuAdmin','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Mobile Safari/537.36','175.176.71.9','2025-12-10 16:12:40'),(25,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36','175.176.71.9','2025-12-10 16:23:35'),(26,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 23:16:45'),(27,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','158.62.53.34','2025-12-10 23:16:46'),(28,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36','222.127.50.93','2025-12-11 00:31:42'),(29,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36','222.127.50.93','2025-12-11 00:48:43'),(30,'admin1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36','222.127.50.93','2025-12-11 01:27:50'),(31,'CtuAdmin','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36','222.127.50.93','2025-12-11 01:49:53'),(32,'admin1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36','2405:8d40:40d9:10ed:2dd4:3193:5289:b438','2025-12-11 02:07:02'),(33,'admin1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36','2405:8d40:40d9:10ed:2dd4:3193:5289:b438','2025-12-11 02:45:42'),(34,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','139.135.79.91','2025-12-11 05:11:18'),(35,'admin1','Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Mobile Safari/537.36','139.135.79.91','2025-12-11 05:11:19'),(36,'admin1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36','2405:8d40:40d9:10ed:b939:e951:38be:1fd0','2025-12-11 06:06:58');
+/*!40000 ALTER TABLE `login_logs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `registered`
+--
+
+DROP TABLE IF EXISTS `registered`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `registered` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(100) DEFAULT NULL,
+  `middle_name` varchar(100) DEFAULT NULL,
+  `last_name` varchar(100) DEFAULT NULL,
+  `address` varchar(250) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `contactno` varchar(50) DEFAULT NULL,
+  `gender` varchar(20) DEFAULT 'NULL',
+  `program` varchar(100) DEFAULT NULL,
+  `year` varchar(20) DEFAULT NULL,
+  `academicstatus` varchar(20) DEFAULT NULL,
+  `studentstatus` varchar(20) DEFAULT NULL,
+  `semester` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `registered`
+--
+
+LOCK TABLES `registered` WRITE;
+/*!40000 ALTER TABLE `registered` DISABLE KEYS */;
+INSERT INTO `registered` VALUES (23,'Ronald','C.','Arias','Santo NiÃ±o, Malabuyoc, Cebu','2025-11-27','ronaldarias1618@gmail.com','09355414337','male','BSIT','2nd','Regular','Continuee',1),(33,'nicole','lidot','benlot','Sapid, Mankayan, Benguet','2025-12-03','nicolebenlot0@gmail.com','0923423423','male','BIT-CT','1st','Regular','Continuee',1),(36,'nicole','lidot','benlot','Santo NiÃ±o, Malabuyoc, Cebu','2025-11-27','nicolebenlot0@gmail.com','0923423423','male','BTLED-ICT','1st','Regular','Continuee',1),(38,'Janice','Angel L.','Chua','Bubulusan, Guinobatan, Albay','2006-02-15','janice123quinanola@gmail.com','09608999012','other','BSIT','3rd','Irregular','Continuee',1),(39,'Janice','Angel L.','Chua','Agong-ong, Buenavista, Agusan Del Norte','2025-11-30','adsa@gmail.com','09222222222','female','BSIT','1st','Irregular','New',1),(40,'nicole','lidot','benlot','Santo NiÃ±o, Malabuyoc, Cebu','2025-11-27','nicolebenlot0@gmail.com','0923423423','male','BSIE','1st','Regular','Continuee',1),(42,'Testing','test','test','Comota, La Paz, Agusan Del Sur','2025-12-01','adsa@gmail.com','09222222222','Prefer not','DMT','1st','Irregular','Transferee',2),(43,'Janice','Angel L.','Chua','Agtangao, Bangued, Abra','2006-02-15','janice123quinanola@gmail.com','222','Prefer not','DMT','1st','Regular','New',1),(44,'nicole','lidot','benlot','Sapid, Mankayan, Benguet','2025-12-03','nicolebenlot0@gmail.com','0923423423','male','BIT-CT','1st','Regular','Continuee',1),(45,'nicole','lidot','benlot','Taloy Sur, Tuba, Benguet','2026-01-09','0945nice@gmail.com','09234234239','Male','BSIT','1st','Regular','Returnee',2),(46,'Janice','Angel L.','Chua','Banglolao, Bucay, Abra','2025-12-24','adsa@gmail.com','09222222222','female','BTLED-ICT','1st','Regular','Continuee',2),(47,'nicole','lidot','test','Inwaloy, Mayoyao, Ifugao','2025-12-26','nicolebenlot0@gmail.com','09234234232','Male','BTLED-ICT','4th','Irregular','Transferee',1),(48,'Janice','Angel L.','Chua','Bao-yan, Boliney, Abra','2006-02-15','janice123quinanola@gmail.com','09222222222','other','DMT','2nd','Irregular','Continuee',1),(51,'Janice','Angel L.','Chua','Bao-yan, Boliney, Abra','2025-11-30','adsa@gmail.com','09222222222','other','BSIT','4th','Regular','New',1);
+/*!40000 ALTER TABLE `registered` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `registration_notifications`
+--
+
+DROP TABLE IF EXISTS `registration_notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `registration_notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `message` varchar(255) DEFAULT NULL,
+  `is_read` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `registration_notifications`
+--
+
+LOCK TABLES `registration_notifications` WRITE;
+/*!40000 ALTER TABLE `registration_notifications` DISABLE KEYS */;
+INSERT INTO `registration_notifications` VALUES (56,'New student registered: Clyde Limbaga',1,'2025-12-11 01:49:40'),(57,'New student registered: Janice Chua',1,'2025-12-11 02:46:18'),(58,'New student registered: Janice Chua',1,'2025-12-11 02:47:29'),(59,'New student registered: Janice Chua',1,'2025-12-11 02:48:05'),(60,'New student registered: Janice Chua',1,'2025-12-11 05:13:00');
+/*!40000 ALTER TABLE `registration_notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `updates`
+--
+
+DROP TABLE IF EXISTS `updates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `updates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `date_posted` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `updates`
+--
+
+LOCK TABLES `updates` WRITE;
+/*!40000 ALTER TABLE `updates` DISABLE KEYS */;
+INSERT INTO `updates` VALUES (15,'Testing Functionality','Will this paragraph posted in the updates page?\r\n\r\nWhat if i do this?\r\n\r\nWill the space seen as it is?\r\n\r\nHow about i put a long paragraph...\r\n\r\n\"My admin webpage serves as the central control hub for managing the entire system, designed to make updating, monitoring, and organizing content simple, smooth, and efficient for the administrator. At the heart of the site is the Admin Home page, where key information and essential tools are gathered in one place through neatly arranged cards that highlight Updates and Programs. The Updates card allows the admin to create, edit, and manage announcements or important posts that users need to see, ensuring that every piece of information shared remains timely and relevant. Beside it, the Programs section showcases five different programs, each represented by its own card for easy access, editing, and organization. These program cards help the admin keep everything structured, especially when managing multiple categories at once. From the Admin Home, the administrator can also access the dashboard through a dedicated icon, where a more detailed overview of activities, logs, and system interactions can be viewed. This dashboard includes features such as history logs, which help track changes or actions performed within the system, ensuring transparency and accountability at all times. The notification icon allows the admin to stay updated with recent activities, alerts, or submissions from users, making it easier to respond promptly whenever needed. There is also a logout icon that ensures the admin can securely exit the system once tasks are completed. The webpage is designed not only for functionality but also for clarity and user-friendly navigation, with each element placed intentionally so the admin can perform tasks without confusion or clutter. Responsiveness is also an essential part of its designâ€”buttons, cards, dropdowns, and other layout elements adjust smoothly depending on the device size, ensuring a consistent experience whether the page is viewed on a desktop, tablet, or mobile phone. The color palette is chosen to maintain a professional yet modern feel, while typography, spacing, and icons work together to keep the interface clean and visually appealing. Each feature supports the overall goal: to give the administrator a workspace that feels organized, intuitive, and easy to manage on a daily basis. Whether posting new content, reviewing programs, checking logs, or handling notifications, the admin webpage provides everything needed in one well-structured environment, reducing the time and effort required to manage different parts of the system. It serves as both a control center and a reflection of good designâ€”simple, functional, and aligned with the needs of the user.\"','2025-12-03 03:40:13'),(16,'Testing for Long Words in One Paragraph','Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch, young Hubert Blaine Wolfeschlegelsteinhausenbergerdorff Sr. awoke one morning with a curious mission: he had received a mysterious letter from Taumatawhakatangihangakoauauotamateapokaiwhenuakitanatahu, delivered by a carrier pigeon that had somehow navigated continents and oceans without ever stopping. The letter, written in an almost impossibly long language, contained the phrase â€œpneumonoultramicroscopicsilicovolcanoconiosisâ€ as a warning, along with directions to meet at 1234 N. E. Longeststreetnamethatisusedfortestingpurposesavenue, an address so complicated that even the local postman shook his head in disbelief. As Hubert packed his bag, he muttered â€œhippopotomonstrosesquipedaliophobiaâ€ under his breath, knowing full well that the journey ahead would be filled with incomprehensible challenges, from navigating pseudopseudohypoparathyroidism-inducing puzzles to avoiding the tricky traps set by the mischievous Supercalifragilisticexpialidocious Society of Unnecessarily Long Word Enthusiasts. Along the way, he encountered a talking parrot who insisted on reciting the name of the village in New Zealand backwards while juggling flaming coconuts, and every step forward felt like a test of endurance, memory, and sanity. Yet, despite the chaos, Hubert pressed on, determined to solve the mystery hidden in the longest words, the most labyrinthine addresses, and the absurdly extended names that seemed almost alive, whispering secrets from centuries past, until he finally reached the place where the pigeon landed and discovered a tiny, glowing stone engraved with the letters â€œXerxesYancyZeusWolfeschlegelsteinhausenbergerdorffwelchevoralternwarengewissenhaftschaferswessenschafewarenwohlgepflegeundsorgfaltigkeitbeschutzenvonangreifendurchihrraubgierigfeindewelchevoralternzwolftausendjahresvorandieerscheinenvandererstehumanensindvorgeshenâ€, a word so impossibly long that Hubert realized it might just be the key to unlocking the universeâ€™s greatest secret.','2025-12-03 03:55:20'),(17,'sdfsfsdfsf','saadf\r\nafda\r\nf\r\ndf\r\ns\r\ndfs\r\nfs\r\ndf\r\nsd\r\nfs\r\ndfs\r\ndf\r\ns\r\nf\r\nsdf\r\ns\r\ndf\r\nsdf\r\nsd\r\nfs\r\ndf\r\ns\r\nfds\r\nf\r\ns\r\nfd','2025-12-11 06:59:28');
+/*!40000 ALTER TABLE `updates` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'sphinx0945_studentlist'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-12-11  7:15:46
