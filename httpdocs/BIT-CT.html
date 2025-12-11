@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIT-CT | Admin Panel</title>
+   <link rel="stylesheet" href="program.css">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="dashboard">
+    <header class="admin-header">
+      <div class="admin-profile">
+        <div class="avatar">🎓</div>
+        <h3>BIT-CT</h3>
+      </div>
+
+      <div class="icons"> 
+        <button onclick="window.location.href='programs.php'" title="Back"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </header>
+
+    <section class="home-content">
+      <h1>BIT-CT Year Levels</h1>
+       <p>Select a year level to view or manage enrolled students.</p>
+
+      <div class="cards">
+        <div class="card" onclick="window.location.href='bit-ct1.php'">
+         <h2>1st Year</h2>
+        </div>
+        <div class="card" onclick="window.location.href='bit-ct2.php'">
+         <h2>2nd Year</h2>
+        </div>
+        <div class="card" onclick="window.location.href='bit-ct3.php'">
+         <h2>3rd Year</h2>
+        </div>
+        <div class="card" onclick="window.location.href='bit-ct4.php'">
+         <h2>4th Year</h2>
+        </div>
+        <div class="card" onclick="window.location.href='bit-ctirregular.php'">
+         <h2>Irregulars</h2>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+</html>
