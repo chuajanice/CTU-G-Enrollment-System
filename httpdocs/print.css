@@ -1,0 +1,73 @@
+@media print {
+
+  /* Show only the title and the table */
+  body * {
+    visibility: hidden !important;
+  }
+
+  .admin-header h3,
+  .table-container,
+  .table-container * {
+    visibility: visible !important;
+  }
+
+  /* Remove the blurred dashboard background */
+  body, html {
+    margin: 30px !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  /* Remove border + background + scroll from table container */
+  .table-container {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+
+  /* Title */
+  .admin-header h3 {
+    font-size: 22px !important;
+    font-weight: bold !important;
+    margin-bottom: 16px !important;
+    color: #000 !important;
+  }
+
+  /* Table full clean layout for printing */
+  table {
+    max-width: 90% !important;
+    border-collapse: collapse !important;
+    font-size: 14px !important;
+    display: table !important;
+  }
+
+  th, td {
+    border: 1px solid #000 !important;
+    padding: 6px 10px !important;
+    color: #000 !important;
+    text-align: left !important;
+  }
+
+  th {
+    font-weight: bold !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+  }
+
+  /* Hide unnecessary UI */
+  .avatar,
+  .action-column,
+  .icons,
+  .print-btn,
+  nav,
+  header button,
+  footer {
+    display: none !important;
+  }
+}
