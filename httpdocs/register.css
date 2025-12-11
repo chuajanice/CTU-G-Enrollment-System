@@ -1,0 +1,98 @@
+/* REGISTER CONTAINER (inherits index.html bg) */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* REGISTER BOX */
+.register-box {
+  background: rgba(255, 255, 255, 0.88);
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: popIn 0.3s ease;
+  z-index: 2;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  border: none;
+  background: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* TEXT STYLING */
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #060000;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* INPUTS */
+input, select {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #f8f8ff;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  border-color: #ff6600;
+}
+
+/* 💥 UPGRADED SUBMIT BUTTON */
+.submit-btn {
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 16px; /* larger */
+  font-size: 1.1rem; /* larger font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #ff8533;
+  transform: scale(1.03);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .register-box {
+    padding: 1.5rem;
+  }
+}
+
+/* ANIMATION */
+@keyframes popIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
